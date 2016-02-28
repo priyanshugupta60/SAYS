@@ -19,27 +19,36 @@ if(isset($_COOKIE['ID_my_site']))   {
             <?php include_once 'header.php'; ?>
             <tr>
             <td bgcolor="#edeff2" style="width:30%;height:70%;font-size:18px;" align="center">
-            <table style="width:90%;height:60%;" ng-align="center">
+            <table style="width:90%;height:100%;" ng-align="center">
                   <tr>
-                      <td align="center" style="font-weight: bold;"><a href="?view=myPurchases"><font color="#3127aa">My Purchases</font></a></td>
+                      <td align="left" style="font-weight: bold; height:5%;">Hello, <?php echo $info['Full Name']; ?></td>
                   </tr>
                   <tr>
-                      <td align="center" style="font-weight: bold;"><a href="?view=myOffers"><font color="#3127aa">My Offers</font></a></td>
+                      <td align="center" style="font-weight: bold; height:15%;">&nbsp;</td>
                   </tr>
                   <tr>
-                      <td align="center" style="font-weight: bold;"><a href="?view=myWishlist"><font color="#3127aa">My Wishlist</font></a></td>
+                      <td align="center" style="font-weight: bold; height:10%;"><a href="?view=myPurchases"><font color="#3127aa">My Purchases</font></a></td>
                   </tr>
                   <tr>
-                      <td align="center" style="font-weight: bold;"><a href="?view=myLoyaltyBonus"><font color="#3127aa">My Loyalty Bonus</font></a></td>
+                      <td align="center" style="font-weight: bold; height:10%;"><a href="?view=myOffers"><font color="#3127aa">My Offers</font></a></td>
                   </tr>
                   <tr>
-                      <td align="center" style="font-weight: bold;"><a href="?view=myRegularOffers"><font color="#3127aa">Regular Offers</font></a></td>
+                      <td align="center" style="font-weight: bold; height:10%;"><a href="?view=myWishList"><font color="#3127aa">My Wishlist</font></a></td>
                   </tr>
                   <tr>
-                      <td align="center" style="font-weight: bold;"><a href="?view=myProductList"><font color="#3127aa">Product List</font></a></td>
+                      <td align="center" style="font-weight: bold; height:10%;"><a href="?view=myLoyaltyBonus"><font color="#3127aa">My Loyalty Bonus</font></a></td>
                   </tr>
                   <tr>
-                      <td align="center" style="font-weight: bold;"><a href="?view=myHistory"><font color="#3127aa">My History</font></a></td>
+                      <td align="center" style="font-weight: bold; height:10%;"><a href="?view=myRegularOffers"><font color="#3127aa">Regular Offers</font></a></td>
+                  </tr>
+                  <tr>
+                      <td align="center" style="font-weight: bold; height:10%;"><a href="?view=myProductList"><font color="#3127aa">Product List</font></a></td>
+                  </tr>
+                  <tr>
+                      <td align="center" style="font-weight: bold; height:10%;"><a href="?view=myHistory"><font color="#3127aa">My History</font></a></td>
+                  </tr>
+                  <tr>
+                      <td align="center" style="font-weight: bold; height:10%;">&nbsp;</td>
                   </tr>
             </table>
             </td>
@@ -53,10 +62,10 @@ if(isset($_COOKIE['ID_my_site']))   {
                         else $tab = $_GET['view'];
                         if ($tab=='myPurchases') include_once 'myPurchases.php';
                         if ($tab=='myOffers') include_once 'myOffers.php';
-                        if ($tab=='myWishlist') include_once 'myWishlist.php';
+                        if ($tab=='myWishList') include_once 'myWishList.php';
                         if ($tab=='myLoyaltyBonus') include_once 'myLoyaltyBonus.php';
-                        if ($tab=='myRegularOffers') include_once 'myRegularOffers.php';
-                        if ($tab=='myProductList') include_once 'myProductList.php';
+                        if ($tab=='myRegularOffers') include_once 'RegularOffers.php';
+                        if ($tab=='myProductList') include_once 'ProductList.php';
                         if ($tab=='myHistory') include_once 'myHistory.php';
                    ?>
                    </td>

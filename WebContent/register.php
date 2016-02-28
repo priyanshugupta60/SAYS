@@ -25,7 +25,8 @@ if (isset($_POST['submit'])) {     //This makes sure they did not leave any fiel
 			);
 	if ($okay) {
 		$check = mysql_query("SELECT `Email ID` FROM login WHERE `Email ID` = '".$_POST['email']."'")   or die(mysql_error());
-		if ($check) {
+		$check2 = mysql_num_rows($check);
+		if ($check2) {
 			echo "<script language=\"JavaScript\">\n";
 			echo "alert('Email ID already exist.');\n";
 			echo "window.location='newuser.php'";
@@ -66,10 +67,11 @@ if (isset($_POST['submit'])) {     //This makes sure they did not leave any fiel
 	}
 	$hash = md5(rand(0,1000));
 	$password = rand(1000,5000);
+	$dat = date("Y-m-d");
 	$insert = "INSERT INTO login
 			VALUES ('".$_POST['username']."', '".md5($password)."', '".$_POST['email']."', '".$_POST['name']."'
 					, '".$_POST['number']."', '".$_POST['line1']."', '".$_POST['line2']."', '".$_POST['pincode']."'
-							, '".$_POST['city']."', '".$_POST['state']."', '".$hash."', '0', '0')";
+							, '".$_POST['city']."', '".$_POST['state']."', '".$hash."', '0', '0', '".$dat."')";
 	$add_member = mysql_query($insert) or die(mysql_error());
 require_once "Mail.php"; 
 $from = "Admin <admin@says.com>"; 
